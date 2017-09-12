@@ -1,0 +1,20 @@
+{
+    "name": "snazzycontacts",
+    "version": "0.1.0",
+    "description": "elastic.io Snazzy Contacts component",
+    "scripts": {
+        "test": "exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "Wice@git.elastic.io:snazzycontacts.git"
+    },
+    "author": "Wice GmbH",
+    "license": "BSD-2-Clause",
+
+    "dependencies": {
+        "q": "^1.4.1",
+        "elasticio-sailor-nodejs": "1.3.0",
+        "elasticio-node": "0.0.7"
+    }
+}

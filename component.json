@@ -1,0 +1,93 @@
+{
+    "title": "Snazzy Contacts",
+    "description": "Snazzy Contacts component for the elastic.io platform",
+    "docsUrl":"https://snazzycontacts.com",
+/*
+    "fields" : {
+      "search": {
+            "label": "Optional search string (for search in name, ID or phone number)",
+            "viewClass": "TextFieldView",
+            "placeholder": ""
+      }
+    },
+*/
+    "credentials": {
+        "fields": {
+            "apikey": {
+                "label": "API-Key for data sharing",
+                "required": true,
+                "viewClass": "TextFieldView"
+            },
+            "email": {
+                "label": "Your email",
+                "required": true,
+                "viewClass": "TextFieldView"
+            },
+            "password": {
+                "label": "Your password",
+                "required": true,
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "getOrganizations": {
+            "main": "./lib/triggers/getOrganizations.js",
+            "type": "polling",
+            "title": "Get Organizations",
+            "metadata": {
+                "out": "./lib/schemas/getHello.out.json"
+            }
+        },
+        "getPersons": {
+            "main": "./lib/triggers/getPersons.js",
+            "type": "polling",
+            "title": "Get Persons",
+            "metadata": {
+                "out": "./lib/schemas/getHello.out.json"
+            }
+        }
+    },
+    "actions": {
+        "getPersons": {
+	    "main": "./lib/actions/getPersons.js",
+            "title": "Get Persons",
+            "metadata": {
+                "in": "./lib/schemas/getPersons.in.json",
+                "out": "./lib/schemas/getPersons.out.json"
+            }
+        },
+        "createOrganization": {
+            "main": "./lib/actions/createOrganization.js",
+            "title": "Create Organization",
+            "metadata": {
+                "in": "./lib/schemas/createOrganization.in.json",
+                "out": "./lib/schemas/updateHello.out.json"
+            }
+        },
+        "createPerson": {
+            "main": "./lib/actions/createPerson.js",
+            "title": "Create Person",
+            "metadata": {
+                "in": "./lib/schemas/createPerson.in.json",
+                "out": "./lib/schemas/updateHello.out.json"
+            }
+        },
+        "updateOrganization": {
+            "main": "./lib/actions/updateOrganization.js",
+            "title": "Update Organization",
+            "metadata": {
+                "in": "./lib/schemas/updateOrganization.in.json",
+                "out": "./lib/schemas/updateHello.out.json"
+            }
+        },
+        "updatePerson": {
+            "main": "./lib/actions/updatePerson.js",
+            "title": "Update Person",
+            "metadata": {
+                "in": "./lib/schemas/updatePerson.in.json",
+                "out": "./lib/schemas/updateHello.out.json"
+            }
+        }
+   }
+}
